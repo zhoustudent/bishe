@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="小周同学">
+    <title>个人中心</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <style>
+
+    </style>
+
+</head>
+
+<body class="z-26">
+    <div class="person-bei">
+        <img src="./img/person.jpg" alt="">
+    </div>
+    <header class="z-24">
+        <span class="fa fa-reorder z-25"></span>
+        <div class="z-27">
+            <ul class="z-28">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="lesson.html">课程</a></li>
+                <li><a href="#">职业规划</a></li>
+                <li><a href="person.html">我的</a> </li>
+            </ul>
+        </div>
+    </header>
+    <main class="z-30">
+        <div class="z-29">
+
+        </div>
+
+        <div class="z-35 animated ">设置<br>头像</div>
+        <div class="z-36 animated ">更改<br>用户名</div>
+        <div class="z-37 animated ">更改<br>密码</div>
+        <div class="z-38 animated ">个人<br>信息</div>
+
+
+        <div class="z-34 animated rollIn"><a href="#">我的课程</a></div>
+        <div class="z-31 animated rollIn"><a href="#">我购买的视频</a></div>
+        <div class="z-32 animated rollIn"><a href="mymoney.html">我的钱包</a></div>
+        <div class="z-33 animated rollIn"><a href="shopcar.html">我的<br>购物车</a></div>
+    </main>
+
+
+    <div class="z-40">
+        <!--demo上传图片-->
+        <section class="z-41">
+            <h3>上传头像</h3>
+            <hr>
+            <form action="" enctype="multipart/form-data" id="upphoto">
+                <label for="photos">请上传头像:</label><br>
+                <input type="file" name="photo" id="photos" accept=".jpg,jpeg,.png">
+                <button type="submit" class="z-43">上传</button>
+                <button type="button" class="z-42">取消</button>
+
+            </form>
+        </section>
+    </div>
+    <div class="z-72">
+        <section class="z-66">
+            <h3>个人信息</h3>
+            <hr>
+            <div class="z-71">
+                <label>id:</label>
+                <input type="text" class="z-73" readonly><br>
+                <label>用户名:</label>
+                <input type="text" class="z-67" readonly><br>
+                <label>邮箱:</label>
+                <input type="text" class="z-68" readonly><br>
+            </div>
+
+
+            <button type="button" class="z-70">返回</button>
+
+        </section>
+    </div>
+    <div class="z-56">
+        <section class="z-57">
+            <h3>更改用户名</h3>
+            <hr>
+
+            <form action="" enctype="multipart/form-data" id="upusername">
+                <div class="z-60">
+                    <label for="oldusername">当前用户名：</label>
+                    <input type="text" name="oldusername" id="oldusername" readonly><br>
+                    <label for="newusername">新用户名：</label>
+                    <input type="text" name="newusername" id="newusername" required>
+                </div>
+                <button type="submit" class="z-58">提交</button>
+                <button type="button" class="z-59">取消</button>
+
+            </form>
+
+
+        </section>
+    </div>
+    <div class="z-61">
+        <section class="z-65">
+            <h3>设置密码</h3>
+            <hr>
+
+            <form action="" enctype="multipart/form-data" id="uppassword">
+                <div class="z-62">
+                    <label for="oldpassword">当前用户名：</label>
+                    <input type="password" name="oldpassword" id="oldpassword" required><br>
+                    <label for="newpassword">新用户名：</label>
+                    <input type="password" name="newpassword" id="newpassword" required>
+                </div>
+                <button type="submit" class="z-63">提交</button>
+                <button type="button" class="z-64">取消</button>
+
+            </form>
+
+
+        </section>
+    </div>
+
+    <div class="login-tishi">您有未填写的内容，请填写完后提交</div>
+</body>
+
+<script src="js/libs/jquery-3.1.1.min.js"></script>
+<script src="js/libs/jquery.cookie.js"></script>
+<script src="js/person.js"></script>
+
+</html>

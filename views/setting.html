@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="author" content="常伟">
+    <title>管理员中心</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#example-navbar-collapse">
+            <span class="sr-only">切换导航</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+                <a class="navbar-brand" href="#">蜂巢mis</a>
+            </div>
+
+            <div class="collapse navbar-collapse  ads-person" id="example-navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a>zhou</a></li>
+                    <li class="asdExit"><a>退出</a></li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="ads-user">
+        <div class="row">
+            <div class=" container-fluid">
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 ads-list">
+
+
+
+
+                    <div class="panel-group" id="accordion">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">用户信息</a>
+                            </h4>
+                            </div>
+                            <div id="collapseOne" class="panel-collapse collapse ">
+                                <div class="panel-body ads-registList">
+                                    用户注册列表
+                                </div>
+                                <div class="panel-body ads-registerZhe">
+                                    用户注册折线图
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">课程信息</a>
+                            </h4>
+                            </div>
+                            <div id="collapseTwo" class="panel-collapse collapse">
+                                <div class="panel-body ads-nowlesson">
+                                    现有课程管理
+                                </div>
+                                <div class="panel-body ads-addlesson">
+                                    增添课程
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">财务信息</a>
+                            </h4>
+                            </div>
+                            <div id="collapseThree" class="panel-collapse collapse">
+                                <div class="panel-body ads-buylist">
+                                    购买课程列表
+                                </div>
+                                <div class="panel-body ads-allmoney">
+                                    总收入金额
+                                </div>
+                                <div class="panel-body ads-userzhanghu">
+                                    用户账户金额明细
+                                </div>
+                                <div class="panel-body ads-recharge">
+                                    用户账户金额充值
+                                </div>
+
+
+                            </div>
+                        </div>
+
+
+
+
+
+
+                    </div>
+
+
+                </div>
+                <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12 ">
+                    <div class="ads-main">欢迎进入管理员中心</div>
+                    <div class="ads-registLists">
+
+                        <table class="table table-bordered">
+                            <caption>共有{{length[0]}}个用户注册本网站</caption>
+                            <thead>
+                                <tr>
+                                    <th>序号</th>
+                                    <th>用户id</th>
+                                    <th>用户名称</th>
+                                    <th>用户密码</th>
+                                    <th>用户邮箱</th>
+                                    <th>注册时间</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {{each datas[0] as data index}}
+                                <tr>
+                                    <td>{{index + 1}}</td>
+                                    <td>{{data.id}}</td>
+                                    <td>{{data.username}}</td>
+                                    <td>{{data.password}}</td>
+                                    <td>{{data.email}}</td>
+                                    <td>{{data.createTime}}</td>
+                                </tr>
+                                {{/each}}
+                            </tbody>
+                        </table>
+
+                    </div>
+                    <div class="ads-registerZhes" id="main" style="width: 600px;height:400px;">
+                    </div>
+                    <div class="ads-addlessons">
+                        <h3>添加新课程：</h3>
+                        <section class="progress progress-striped active">
+                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+                                style="width: 1%;">
+                                <!--<span class="sr-only">60% 完成</span>-->
+                            </div>
+                        </section>
+                        <section class="addformfirst">
+                            <form class="form-horizontal" role="form" id="addlessonfirst">
+                                <div class="form-group">
+                                    <label for="lessonname" class="col-sm-2 control-label">课程名称</label>
+                                    <div class="col-sm-6">
+                                        <input type="text" class="form-control" id="lessonname" placeholder="请输入课程名称" name="lessonname" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="lessonaut" class="col-sm-2 control-label">作者</label>
+                                    <div class="col-sm-6">
+                                        <input type="text" class="form-control" id="lessonaut" placeholder="请输入作者" required name="lessonaut">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="lessonintro" class="col-sm-2 control-label">课程简介</label>
+                                    <div class="col-sm-6">
+                                        <textarea name="lessonintro" class="form-control" id="lessonintro" required></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="lessonurl" class="col-sm-2 control-label">课程链接</label>
+                                    <div class="col-sm-6">
+                                        <input type="text" class="form-control" id="lessonurl" placeholder="请输入课程链接" required name="lessonurl">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-6 col-sm-offset-2">
+                                        如：C:\Users\Zhou student\Desktop\nodefirst\www\js\video\cloud.mp4 <br>或者：http://player.yinyuetai.com/video/player/109022/v_0.swf
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="lessongrade" class="col-sm-2 control-label">课程所属等级</label>
+                                    <div class="col-sm-6">
+                                        <select class="form-control " id="lessongrade" name="lessongrade">
+                                            <option value="前端基础">前端基础</option>
+                                            <option value="前端中级">前端中级</option>
+                                            <option value="前端高级">前端高级</option>
+                                            <option value="前端大牛">前端大牛</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="lessondeviation" class="col-sm-2 control-label">课程内容偏向</label>
+                                    <div class="col-sm-6">
+                                        <select class="form-control " id="lessondeviation" name="lessondeviation">
+                                            <option value="HTML">HTML</option>
+                                            <option value="CSS">CSS</option>
+                                            <option value="javascript">javascript</option>
+                                            <option value="框架">框架</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-grout">
+                                    <label for="name" class="col-sm-2 control-label">课程是否免费</label>
+                                    <label class="checkbox-inline">
+                                    <input type="radio" name="lessonmoneydecide" id="optionsRadios3" value="免费" checked>免费</label>
+                                    <label class="checkbox-inline">
+                                    <input type="radio" name="lessonmoneydecide" id="optionsRadios4" value="不免费">不免费</label>
+                                </div>
+                                <div class="form-group">
+                                    <label for="lessonprice" class="col-sm-2 control-label">价格(元)</label>
+                                    <div class="col-sm-6">
+                                        <input type="number" class="form-control" id="lessonprice" value="0"  required name="lessonprice">
+                                    </div>
+                                </div>
+                                <div class="form-group addsub">
+                                    <div class="col-sm-offset-5 col-sm-2 ">
+                                        <button type="submit" class="btn btn-default addfirstsub">下一步<span class="fa fa-arrow-circle-right"></span></button>
+                                    </div>
+                                </div>
+                            </form>
+                        </section>
+                        <section class="addformsecond">
+                            <h3>上传张课程宣传图片</h3>
+                            <form class="form-inline" role="form" id="addlessonsecond" enctype="multipart/form-data">
+
+                                <div class="form-group">
+
+                                    <label for="photos" class="col-sm-4">请上传图片:</label>
+                                    <input type="file" name="photo" id="photos" accept=".jpg,jpeg,.png">
+                                </div>
+
+                                <button type="submit" class="btn btn-default">完成</button>
+                            </form>
+                        </section>
+                    </div>
+                    <div class="ads-nowlessons">
+                        <table class="table table-bordered">
+                            <caption>共有{{length[1]}}门课程</caption>
+                            <thead>
+                                <tr>
+                                    <th>序号</th>
+                                    <th>课程id</th>
+                                    <th>课程名称</th>
+                                    <th>课程作者</th>
+                                    <th>课程链接</th>
+                                    <th>课程创建时间</th>
+                                    <th>是否免费</th>
+                                    <th>课程价格</th>
+                                    <th>课程等级</th>
+                                    <th>课程偏好</th>
+                                    <th>操作</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {{each datas[1] as data index}}
+                                <tr>
+                                    <td>{{index + 1}}</td>
+                                    <td>{{data.id}}</td>
+                                    <td>{{data.lessonname}}</td>
+                                    <td>{{data.lessonaut}}</td>
+                                    <td>{{data.lessonurl}}</td>
+                                    <td>{{data.createTimeshow}}</td>
+                                    <td>{{data.lessonmoneydecide}}</td>
+                                    <td>{{data.lessonprice}}</td>
+                                    <td>{{data.lessongrade}}</td>
+                                    <td>{{data.lessondeviation}}</td>
+                                    <td>
+                                        <button type="button" class="btn btn-danger lessondel">删除</button>
+                                    </td>
+                                </tr>
+                                {{/each}}
+                            </tbody>
+                        </table>
+
+                    </div>
+                    <div class="ads-userzhanghus">
+                         <table class="table table-bordered">
+                            <caption>共有{{length[2]}}门课程</caption>
+                            <thead>
+                                <tr>
+                                    <th>序号</th>
+                                    <th>用户名</th>
+                                    <th>用户账户金额</th>
+                                    
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {{each datas[2] as data index}}
+                                <tr>
+                                    <td>{{index + 1}}</td>
+                                    <td>{{data.username}}</td>
+                                    <td>{{data.usermoney}}</td>
+                                    
+                                </tr>
+                                {{/each}}
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="ads-allmoneys">
+                        <h3>我们目前的总充值收入为：</h3>
+                        <p class="ads-allmoneys-show"></p>
+                    </div>
+                    <div class="ads-recharges">
+                        <table class="table table-bordered">
+                            <caption>共有{{length[0]}}个用户注册本网站</caption>
+                            <thead>
+                                <tr>
+                                    <th>序号</th>
+                                    <th>用户id</th>
+                                    <th>用户名称</th>
+                                    <th>用户金库</th>
+                                    <th>操作</th>
+                                    
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {{each datas[0] as data index}}
+                                <tr>
+                                    <td>{{index + 1}}</td>
+                                    <td>{{data.id}}</td>
+                                    <td>{{data.username}}</td>
+                                    <td><input type="number" class="form-control" id="addprice" name="addprice" placeholder="请输入给用户充值的金额(整数金额)" required></td>
+                                    <td><button type="button" class="btn btn-info addsubmon">提交</button></td>
+                                    
+                                </tr>
+                                {{/each}}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="exit">
+            <section class="exit-1">
+                <h2 class="exit-5">您确定要退出么？</h2>
+                <div class="exit-2">
+                    <button class="exit-3">确定</button>
+                    <button class="exit-4">取消</button>
+                    <div>
+            </section>
+            </div>
+            <div class="z-40">
+                <!--demo上传图片-->
+                <section class="z-41">
+                    <h2 class="exit-5">您确定要删除么？</h2>
+                    <div class="exit-2">
+                        <button class="z-43" style="margin-left:10px">确定</button>
+                        <button class="z-42">取消</button>
+                        <div>
+
+
+                </section>
+                </div>
+                <div class="login-tishi">您有未填写的内容，请填写完后提交</div>
+                <script src="js/jquery.min.js"></script>
+                <script src="js/bootstrap.min.js"></script>
+                <script src="js/libs/jquery.cookie.js"></script>
+                <script src="js/libs/template.js"></script>
+                <script src="js/libs/echarts.min.js"></script>
+                <script src="js/setting.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,19 @@
+{
+  "name": "fengchao",
+  "version": "1.0.0",
+  "description": "京东商城的项目",
+  "main": "ser.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "小周同学",
+  "license": "ISC",
+  "dependencies": {
+    "art-template": "^3.1.3",
+    "body-parser": "^1.17.1",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.14.0",
+    "mongoose": "^4.6.4",
+    "multer": "^1.3.0"
+  }
+}

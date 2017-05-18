@@ -1,0 +1,926 @@
+.banner-logo{
+    width: 45px;
+    /*margin-bottom: 10px;*/
+    
+}
+*{
+    box-sizing: border-box;
+
+}
+ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+body{
+    margin: 0;
+    padding: 0;
+}
+.z-0{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+.z-2{  
+    position: fixed;  
+    right: 0px;  
+    bottom: 0px;  
+    min-width: 100%;  
+    min-height: 100%;  
+    height: auto;  
+    width: auto;  
+    /*加滤镜*/  
+    /*-webkit-filter: grayscale(100%);*/  
+    /*filter:grayscale(100%);*/  
+}  
+.z-3{  
+    min-width: 100%;  
+    min-height: 100%;  
+    height: auto;  
+    width: auto;  
+} 
+.z-6{
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    z-index: 2000;
+    background-color: rgba(0, 0, 0, 0.5);
+} 
+.z-1{
+    position: absolute;
+    width: 376px;
+    height: 50px;
+    /*background-color: #fff;*/
+    z-index: 20000;
+    left: calc(50% - 188px);
+    top: calc(30% - 40px);
+    border-radius: 30px;
+    overflow: hidden;
+
+}
+.z-4{
+    width: 75%;
+    height: 100%;
+    float: left;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    border: none;
+    background-color: rgba(17, 35, 59, 0.8);
+    color: #fff;
+    padding-left: 20px;
+    font-size: 16px;
+}
+.z-5{
+    width: 25%;
+    height: 100%;
+    float: left;
+    background-color:#fff;
+    padding: 15px 10px 20px 15px;
+    cursor: pointer;
+}
+.z-10{
+    width: 100vw;
+    height: 100vh;
+    padding-top: 1px;
+    background-color: #f8f8f8;
+    background-image: url('../img/login-back.png');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: relative;
+}
+.z-11{
+    width: 300px;
+    height: 400px;
+    background: rgba(255, 255, 255, 0.5);
+    padding: 20px;
+    /*padding-top: 60px;*/
+    /*padding-bottom: 40px;*/
+    margin-left: calc( 80% - 150px );
+    margin-top: calc( 18% - 100px );
+    border-radius: 10px;
+    box-shadow: 0 0 30px 5px #d0cfcf ;
+    overflow: hidden;
+    display: none;
+    position: relative;
+}
+.z-15{
+    padding: 10px;
+    padding-bottom: 30px;
+
+}
+.z-15:nth-of-type(2){
+    margin-bottom: 10px;
+}
+.z-12{
+    border:none;
+    background: transparent;
+    border-bottom: 1px solid #fff;
+    padding: 5px;
+    width: 150px;
+    height: 30px;
+    font-size: 15px;
+    text-align: center;
+}
+.z-13{
+    /*width: 100%;*/
+   padding: 10px 20px;
+   border: none;
+   font-size: 16px;
+   background: #fff;
+   color: #000;
+   border-radius: 5px;
+   margin-bottom: 30px;
+   /*float: left;*/
+}
+.z-14{
+   width: 100%;
+   padding: 10px 20px;
+   /*float: right;*/
+   border: none;
+   font-size: 16px;
+   background: #24C22F;
+   color: #fff;
+   border-radius: 5px;
+
+}
+.login-tishi{
+    width: 400px;
+    height: 30px;
+    position: absolute;
+    left: calc( 50% - 200px );
+    top: -20px;
+    text-align: center;
+    background: #f73d0c;
+    color: #fff;
+    border-radius: 10px;
+    padding-top: 5px;
+    opacity: 0;
+    z-index: 888888;
+}
+.z-16{
+    position: absolute;
+    display: block;
+    bottom: 10px;
+    text-decoration: none;
+}
+.z-17{
+    position: absolute;
+    display: block;
+    bottom: 10px;
+    right: 10px;
+    text-decoration: none;
+}
+.z-18{
+    background-image: url( '../img/register.jpg' );
+    width: 100vw;
+    height: 100vh;
+    /*background-size: 100%;*/
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    position: relative;
+}
+.z-19{
+    width: 600px;
+    height: 500px;
+    background: rgba(255, 255, 255, 0.5);
+    position: absolute;
+    top: calc( 50% - 250px );
+    left: calc( 50% - 300px );
+    padding: 50px;
+    border-radius: 10px;
+    /*box-shadow: 0 0 20px 5px #d0cfcf;*/
+}
+.z-20{
+    border: none;
+    background: transparent;
+    border-bottom: 1px solid #fff;
+    margin-left: 10px;
+    padding: 10px;
+    width: 300px;
+    
+}
+.z-21{
+    padding: 10px 20px;
+    background-color: #24C22F;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    margin-left: 150px;
+}
+.z-22{
+    padding: 10px 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    border: none;
+    color: #000;
+    margin-left: 50px;
+}
+.z-23{
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    font-size: 20px;
+}
+.yonghu{
+    display: none;
+    cursor: pointer;
+}
+.exit,.pandduan{
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    display: none;
+}
+.exit-1,.pandduan-1{
+    width: 300px;
+    background: #fff;
+    margin: auto;
+    margin-top: calc( 20% - 100px );
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 0 10px 1px #fff ;
+}
+.exit-5,.pandduan-5{
+    padding: 20px;
+    text-align: center;
+}
+.exit-2,.pandduan-2{
+    padding: 20px;
+    overflow: hidden;
+}
+.exit-2 button,.pandduan-2 button{
+    padding: 10px 20px;
+    
+    border-radius: 5px;
+    
+}
+.exit-3,.pandduan-3{
+    float: left;
+    margin-left: 10px;
+    background: #f73d0c;
+    color: #fff;
+    border: none;
+}
+.exit-4,.pandduan-4{
+    float: right;
+    margin-right: 10px;
+    border: 1px solid #555;
+    background: #fff;
+}
+.z-24{
+    width: 100vw;
+    height: 80px;
+    /*background-color: #000;*/
+    position: relative;
+}
+.z-25{
+    color: #fff;
+    padding: 20px;
+}
+.fa-reorder{
+    font-size: 30px!important;
+}
+.z-27{
+    width: 0;
+    height: 0;
+    background-color: #000;
+    position: absolute;
+    padding: 10px;
+    left: 50px;
+    top: 50px;
+    border-radius: 15px;
+   opacity: 0;
+   z-index: 1000000;
+    /*此处应为动画显示消失*/
+}
+.z-28{
+    width: 100%;
+    height: 100%;
+}
+.z-28 li{
+    width: 100%;
+    padding: 15px;
+    margin-top: 10px;
+    border-bottom: 1px solid #f73d0c;
+}
+.z-28 li a{
+    text-decoration: none;
+    color: #fff;
+}
+.z-26{
+    width: 100%;
+    height: 100%;
+   position: relative;
+    /*background-size: 100%;*/
+    
+}
+.person-bei{
+    width: 100%;
+    height: 99.3vh;
+    position: absolute;
+    z-index: -100;
+    left: 0;
+    top: 0;
+}
+.person-bei img{
+    width: 100%;
+    height: 100%;
+}
+.z-30{
+    position: relative;
+    width: 100%;
+    height: calc( 100vh - 100px );
+}
+.z-29{
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-image: url('../img/new-person.jpg');
+    overflow: hidden;
+    left: 300px;
+    top: 100px;
+    background-size: 100%;
+    box-shadow: 0 0 30px 2px #999 inset;
+    cursor: pointer;
+   
+}
+.z-29 img{
+    width: 100%;
+    height: 100%;
+}
+.z-34,.z-31,.z-32,.z-33{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #531945;
+    text-align: center;
+    line-height: 100px;
+    cursor: pointer;
+}
+.z-33{
+    line-height: 16px;
+    padding-top: 30px;
+    left: 1100px;
+    top: 100px;
+}
+.z-34{
+    left: 900px;
+    top: 0;
+}
+.z-32{
+    left: 850px;
+    top: 200px;
+}
+.z-31{
+    left: 1000px;
+    top: 350px;
+}
+
+.z-34 a,.z-31 a,.z-32 a,.z-33 a{
+    text-decoration: none;
+    color: #fff;
+}
+.z-35,.z-36,.z-37,.z-38{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    position: absolute;
+    text-align: center;
+    padding: 15px;
+    opacity: 0;
+    cursor: pointer;
+}
+.z-35{
+    left: 150px;
+    top: 150px;
+}
+.z-36{
+    left: 360px;
+    top: 0px;
+}
+.z-37{
+    left: 570px;
+    top: 150px;
+}
+.z-38{
+    left: 360px;
+    top: 400px;
+}
+.z-40,.z-56,.z-61,.z-72{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+   
+}
+.z-41,.z-55,.z-57,.z-65,.z-66{
+    width: 300px;
+    
+    /*height: 200px;*/
+    background-color: #fff;
+    margin: auto;
+    margin-top: 10%;
+     padding: 20px;
+    border-radius: 10px;
+}
+.z-41 h3,.z-57 h3,.z-65 h3,.z-66 h3{
+    font-weight: normal;
+    margin: 0;
+}
+#photos,.z-60,.z-62,.z-71{
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.z-43,.z-58,.z-63{
+    padding: 10px 20px;
+    background-color: #24C22F;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    margin-left: 60px;
+}
+.z-42,.z-59,.z-64,.z-70{
+    padding: 9px 19px;
+    background-color: #fff;
+    border: 1px solid #444;
+    border-radius: 5px;
+    margin-left: 20px;
+}
+
+.z-45,.z-74{
+    color: #000;
+    width: 100px;
+    text-align: center;
+    position: absolute;
+    top: 20px;
+    left: calc( 50% - 50px )
+}
+.z-46{
+    width: 100%;
+    height: 100px;
+    /*background: red;  */
+    position: relative;
+    padding-top: 1px;
+}
+.z-46 hr{
+    /*position: absolute;*/
+    /*top: 49px;*/
+    border: 1px solid #000;
+    margin-top: 49px;
+}
+.z-46 img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    right: 100px;
+}
+.z-51{
+    width: 100%;
+    padding-left: 200px;
+    padding-right: 100px;
+    padding-top: 30px;
+    text-align: center;
+    
+}
+.z-47{
+    
+    width: 300px;
+    height: 150px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    float: left;
+    color: #000;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+.texiao{
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0);
+    transform: translate3d(0,-2px,0);
+}
+
+.z-48{
+    width: 300px;
+    height: 150px;
+    background: #83c44e;
+    padding: 20px;
+    border-radius: 5px;
+    float: left;
+    color: #fff;
+     margin-right: 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+.z-49{
+    width: 300px;
+    height: 150px;
+    background: #e53935;
+    padding: 20px;
+    border-radius: 5px;
+     float: left;
+    color: #fff;
+     margin-right: 20px;
+    margin-bottom: 20px;
+    line-height: 90px;
+    font-size: 20px;
+    cursor: pointer;
+}
+.z-50{
+    width: 300px;
+    height: 150px;
+    background: #ff6709;
+    padding: 20px;
+    border-radius: 5px;
+     float: left;
+    color: #fff;
+     margin-right: 20px;
+    margin-bottom: 20px;
+    line-height: 110px;
+    font-size: 20px;
+    cursor: pointer;
+}
+.z-52{
+    text-align: center;
+    color: #ff6709;
+    font-size: 50px;
+    line-height: 100px;
+}
+.z-53{
+    width: 100%;
+    height: 100px;
+    padding-top: 10px;
+    /*background: red;*/
+}
+.z-54{
+    text-align: center;
+}
+.z-66{
+    text-align: center;
+}
+#oldusername,#newusername,#oldpassword,#newpassword,.z-67,.z-68,.z-73{
+    width: 130px;
+    padding: 5px 10px;
+    border: none;
+    border-bottom: 1px solid #000;
+    text-align: center;
+}
+.z-60 label,.z-62 label,.z-72 label{
+    width: 100px;
+    text-align: right;
+    display: inline-block;
+}
+.z-72 label{
+    width: 60px;
+}
+.z-67,.z-68,.z-73{
+    width: 190px;
+}
+.z-74{
+    color: #fff;
+}
+.z-75{
+    width: 100%;
+    padding: 20px;
+}
+.z-76{
+    
+    background-color: #fff;
+    padding: 20px;
+    padding-left: 0;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px 5px #999 inset;
+}
+.z-76>section{
+    float: left;
+}
+.z-86{
+    width: 20px;
+    height: 20px;   
+}
+.z-77{
+    width: 5%;
+    text-align: center;
+    
+}
+.z-78{
+    /*height: 60px;*/
+    width: 20%;
+    padding: 10px;
+    border-left: 1px dotted #444;
+}
+.z-79{
+    width: 60%;
+}
+.z-80{
+    width: 10%;
+    float: right;
+    text-align: right;
+    margin-right: 5%;
+}
+.z-81{
+    width: 20%;
+    padding-left: 20px;
+}
+.z-81>div{
+    display: inline-block;
+}
+.z-84{
+    width: 60%;
+    text-align: center;
+    color: #ff6709;
+    /*line-height: 80px;*/
+    padding-top: 10px;
+}
+.z-85{
+    width: 20%;
+    text-align: right;
+    /*padding: 20px;*/
+}
+.z-85>button{
+    background: #24C22F;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 15px;
+    color: #fff;
+    box-shadow: 0 0 10px 2px #999 inset;
+}
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover{    background: transparent;
+}
+.container-fluid>div{
+    float: left;
+}
+.ads-person{
+    float: right!important;
+}
+.ads-index{
+    text-align: center;
+    font-size: 40px;
+    line-height: 400px;
+}
+.ads-user{
+    height: calc( 100vh - 90px )!important;
+}
+.ads-list{
+    height: calc( 100vh - 90px );
+    border-right-style: double;
+}
+.ads-main{
+    font-size: 40px;
+    text-align: center;
+    line-height: 300px;
+}
+.ads-registLists{
+    display: none;
+}
+.panel-body{
+    cursor: pointer;
+}
+.ads-registerZhes{
+   display: none;
+}
+.ads-addlessons{
+    display: none;
+    margin: 20px auto;
+}
+#lessonintro{
+    resize: none;
+}
+.addfirstsub{
+    font-size: 20px;
+    background-color: #5cb85c;
+    color: #fff;
+}
+.addsub{
+    margin-top: 20px;
+}
+.addformsecond{
+    display: none;
+}
+.ads-nowlessons{
+    display: none;
+}
+.ads-buylists{
+    display: none;
+}
+.ads-allmoneys{
+    display: none;
+}
+.ads-allmoneys h3{
+    text-align: center;
+}
+.ads-allmoneys-show{
+    font-size: 200px;
+    padding-top: 100px;
+    color: #ff6709;
+    text-align: center;
+}
+.ads-recharges{
+    display: none;
+}
+.ads-userzhanghus{
+    display: none;
+}
+.z-89{
+    width: 100%;
+    padding: 20px;
+    overflow: hidden;
+}
+.z-89:after{
+    
+    
+}
+.z-89>section{
+    width: 20%;
+    margin-left: 4%;
+    background-color: #fff;
+    /*height: 100px;*/
+    float: left;
+    padding: 10px;
+}
+.z-89>section img{
+    width: 100%;
+}
+.z-93{
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 50px;
+}
+.z-94{
+    width: 30%;
+    background-color: #5cb85c;
+    padding: 20px;
+    height: 100px;
+    margin: auto;
+    border-radius: 5px;
+    text-align: center;
+    color: #fff;
+    font-size: 30px;
+    cursor: pointer;
+    line-height: 60px;
+}
+.z-95{
+    font-size: 30px;
+    text-align: center;
+    font-family: '黑体';
+    padding-bottom: 20px;
+}
+.z-91>div:nth-of-type(1){
+    margin-bottom: 60px;
+}
+.z-92>div:nth-of-type(1){
+    margin-bottom: 20px;
+}
+.z-98{
+    position: relative;
+}
+.z-96{
+    position: absolute;
+    width: 300px;
+    background: #fff;
+    border-radius: 10px;
+    top: 350px;
+    left: 900px;
+    display: none;
+    border: 1px solid #999;
+}
+.z-97{
+    width: 100%;
+    padding: 20px;
+}
+.z-97>li{
+    text-align: left;
+}
+.z-97>li:nth-of-type(1){
+    text-align: center;
+}
+.z-99{
+    width: 100%;
+    overflow: auto;
+    padding: 0 30px;
+    height: 500px;
+}
+.z-100{
+    width: 25%;
+    padding: 0 3%;
+    float: left;
+}
+.z-101{
+    width: 100%;
+    padding: 10px;
+    /*background-color: #fff;*/
+    border-radius: 5px;
+    padding-bottom: 30px;
+}
+.z-101>section:nth-of-type(1){
+    border-radius: 5px;
+    overflow: hidden;
+    padding-bottom: 20px;
+}
+.z-101 img{
+    width: 100%;
+}
+.z-101>section:nth-of-type(2){
+    width: 100%;
+}
+.z-102{
+    overflow: hidden;
+}
+.z-102>div{
+    float: left;
+}
+.z-102>div:nth-of-type(2){
+    float: right;
+}
+.z-99>div:nth-of-type(n)>div{
+    background: #fff
+}
+.z-99>div:nth-of-type(2n)>div{
+    background: #97cbff;
+}
+.z-99>div:nth-of-type(3n)>div{
+    background: #ffff93;
+}
+.z-103{
+    text-align: center;
+    color: #fff;
+    font-size: 30px;
+    padding-top: 100px;
+}
+.z-105,.z-109{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    z-index: 10000;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+}
+.z-106,.z-110{
+    width: 50px;
+    height: 50px;
+    color: #fff;
+    font-size: 50px;
+    position: absolute;
+    top: 30px;
+    right: 50px;
+}
+.z-107{
+    width: 80%;
+    height: 80%;
+    margin: auto;
+    margin-top: 5%;
+    
+    background-color:#000;
+}
+
+.z-114{
+    background: #fff;
+    width: 400px;
+    height: 300px;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    position: absolute;
+    left: calc( 50% - 200px );
+    top: calc( 50% - 150px )
+}
+.z-115{
+    color: red;
+    font-size: 20px;
+}
+.z-111{
+     overflow: hidden;
+     width: 100%;
+     padding: 10px 0;
+}
+.z-112{
+    float: left;
+}
+.z-113{
+    float: right;
+}
+.z-116{
+    padding-top: 40px;
+    font-size: 18px;
+}
+.z-117{
+    margin-top: 80px;
+}
