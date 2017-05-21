@@ -87,16 +87,18 @@ router.post('/lesson-css/addshopcar',function(req,res){
             // 视频详细信息
             var shopcarevery = {username:addshopcar.username,lessonname:data.lessonname}
             console.log(shopcarevery)
-            shopcar.find(shopcarevery,function(err,data){
+            shopcar.find(shopcarevery,function(err,dataf){
                 if(!err){
-                    if(data.length > 0){
+                    if(dataf.length > 0){
                         res.json({code:'false',msg:'您已将此视频加入购物车或者以够买过此视频，请勿重复操作'})
                     }else{
                         var createTime = new Date().toLocaleString()
                         shopcarevery.createTime = createTime
+                        shopcarevery.lessonprice = data.lessonprice
                         shopcarevery.status = 0
+                        shopcarevery.imageurl = data.createTime
                         var addshopcar1 = new shopcar(shopcarevery)
-                        addshopcar1.save(function(err,data){
+                        addshopcar1.save(function(err,datag){
                             if(!err){
                                 res.json({code:'success',msg:'您以将此视频加入购物车，请到购物车中结算'})
                             }

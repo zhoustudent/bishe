@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="小周同学">
+    <title>我的钱包</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+
+    </style>
+</head>
+
+<body class="z-44">
+    <div class="person-bei">
+        <img src="./img/mymoney.jpg" alt="">
+    </div>
+    <header class="z-24">
+        <span class="fa fa-reorder z-25"></span>
+        <div class="z-27">
+            <ul class="z-28">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="#">课程</a></li>
+                <li><a href="#">职业规划</a></li>
+                <li><a href="person.html">我的</a> </li>
+            </ul>
+        </div>
+        <section class="z-45"></section>
+    </header>
+    <main>
+        <div class="z-46">
+
+        </div>
+        <section class="z-51">
+            <div class="z-47 animated tada">
+                <section>余额</section>
+                <section class="z-52">￥1000.00</section>
+            </div>
+            <div class="z-48 animated tada">
+                <section>账单</section>
+                <section class="z-53">
+                    {{if datas.length == 0}} 暂无数据 {{else}} 共有{{length}}条购买记录 {{/if}}
+                </section>
+            </div>
+            <div class="z-49 animated tada">
+                充值
+            </div>
+            <div class="z-50 animated tada">
+                更多内容敬请期待
+                <span class="fa fa-arrow-circle-right"></span>
+            </div>
+        </section>
+
+    </main>
+    <div class="z-40">
+        <!--demo上传图片-->
+        <section class="z-41">
+            <h3>扫描二维码充值</h3>
+            <hr>
+            <div class="z-54">
+                <img src="./img/zhifu.png" alt="">
+                <button type="button" class="z-42">取消</button>
+            </div>
+        </section>
+        <section class="z-55"></section>
+    </div>
+    <div class="z-109">
+        <section class="z-110 fa fa-remove animated ">
+        </section>
+        <section class="z-114">
+            <table class="table table-hover">
+                
+                <thead>
+                    <tr>
+                        <th>序号</th>
+                        <th>课程名称</th>
+                        <th>购买时间</th>
+                        <th>购买价格</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{if datas.length ==0}}
+                    <tr><td colspan="4">暂无数据</td></tr>
+                    {{else}}
+                    {{each datas as data index}}
+                    <tr>
+                        <td>{{index + 1}}</td>
+                        <td>{{data.lessonname}}</td>
+                        <td>{{data.createTimeshow}}</td>
+                        <td>￥{{data.lessonprice}}</td>
+                    </tr>
+                   {{/each}}
+                   {{/if}}
+                </tbody>
+            </table>
+        </section>
+
+    </div>
+
+</body>
+<script src="js/libs/jquery-3.1.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/libs/jquery.cookie.js"></script>
+<script src="js/mymoney.js"></script>
+
+</html>

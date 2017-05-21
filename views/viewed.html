@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="author" content="小周同学">
+    <title>观看记录</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div class="person-bei">
+        <img src="./img/lesson-css.jpg" alt="">
+    </div>
+    <header class="z-24">
+        <span class="fa fa-reorder z-25"></span>
+        <div class="z-27">
+            <ul class="z-28">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="lesson.html">课程</a></li>
+                <li><a href="#">职业规划</a></li>
+                <li><a href="person.html">我的</a> </li>
+            </ul>
+        </div>
+
+    </header>
+
+    <main class="z-99 z-140">
+
+        
+        <table class="table table-hover">
+            <caption>您总共有{{length}}条浏览记录</caption>
+            <thead>
+                <tr>
+                    <th>序号</th>
+                    <th>视频名称</th>
+                    <th>首次观看时间</th>
+                    <th>最近一次观看</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{if datas.length == 0}}
+                <tr><td colspan="4" style="text-align:center">暂无观看记录</td></tr>
+                {{else}}
+                {{each datas as data index}}
+                <tr>
+                    <td>{{index + 1}}</td>
+                    <td>{{data.videoname}}</td>
+                    <td>{{data.videocreateTime}}</td>
+                    <td>{{data.videoupdateshowTime}}</td>
+                </tr>
+                {{/each}}
+                {{/if}}
+            </tbody>
+        </table>
+
+
+    </main>
+
+
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/libs/jquery.cookie.js"></script>
+    <script src="js/libs/template.js"></script>
+    <script src="js/viewed.js"></script>
+</body>
+
+</html>

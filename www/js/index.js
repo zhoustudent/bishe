@@ -28,6 +28,38 @@ $(function () {
             window.location.href = 'shopcar.html'
         }
     })
+    $('.lessonall').click(function () {
+        if (!objcookie.hasOwnProperty('user')) {
+            $('.pandduan').css('display', 'block')
+            $('.pandduan-3').off().on('click', function () {
+                window.location.href = 'login.html'
+            })
+
+            // var result = confirm('您还没有登录，是否登录？')
+            // if (result == true) {
+            //     window.location.href = 'login.html'
+            // }
+
+        } else {
+            window.location.href = 'lesson.html'
+        }
+    })
+    $('.workrule').click(function () {
+        if (!objcookie.hasOwnProperty('user')) {
+            $('.pandduan').css('display', 'block')
+            $('.pandduan-3').off().on('click', function () {
+                window.location.href = 'login.html'
+            })
+
+            // var result = confirm('您还没有登录，是否登录？')
+            // if (result == true) {
+            //     window.location.href = 'login.html'
+            // }
+
+        } else {
+            window.location.href = 'workrule.html'
+        }
+    })
 
     $('.exitbutton').off().on('click', function () {
         $('.exit').css('display', 'block')

@@ -72,3 +72,9 @@ $(function () {
         }, 3000)
     })
 })
+$('.z-110').click(function(){
+    $('.z-109').fadeOut()
+})
+$('.z-53').click(function(){
+    $('.z-109').fadeIn()
+})

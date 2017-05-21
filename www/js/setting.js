@@ -63,6 +63,11 @@ $('.ads-userzhanghu').click(function () {
 $('.ads-recharge').click(function () {
     $('.ads-recharges').css('display', 'block').siblings().css('display', 'none')
 })
+
+$('.ads-goulesson').click(function () {
+    $('.ads-goulessons').css('display', 'block').siblings().css('display', 'none')
+})
+
 $('.ads-allmoney').click(function () {
     $.get('/adsallmoney/chaxun', null, function (res) {
         console.log(res)
@@ -72,6 +77,10 @@ $('.ads-allmoney').click(function () {
     })
     $('.ads-allmoneys').css('display', 'block').siblings().css('display', 'none')
 })
+
+
+
+
 var myChart = echarts.init(document.getElementById('main'));
 // 显示标题，图例和空的坐标轴
 myChart.setOption({

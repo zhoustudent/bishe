@@ -5,9 +5,11 @@
     <meta charset="utf-8">
     <meta name="author" content="小周同学">
     <title>购物车</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
     <style>
 
     </style>
@@ -30,54 +32,91 @@
         <section class="z-74"></section>
     </header>
     <main class="z-75">
-        <div class="z-76">
+
+        {{if datas.length == 0}}
+        <div class="z-76" style="width:100%;height:80%;padding-top:100px;font-size:20px;text-align:center">
+            您的购物车比我的脸还干净哦
+        </div>
+        {{else}}
+        {{each datas as data index}} 
+        
+
+        <div class="z-76" data-id="{{data.id}}">
             <section class="z-77">
                 <!--选中-->
-                <input type="checkbox" checked class="z-86">
+                <div class="z-86 " >
+                    <div class="z-123"></div>
+                </div>
             </section>
             <section class="z-78">
                 <!--图片-->
-                <img src="" alt="">
+                <img src="productPhoto/{{data.imageurl}}.jpg" alt="">
             </section>
             <section class="z-79">
-                <!--课程信息-->12312313
+                <!--课程信息-->
+                {{data.lessonname}}
             </section>
             <section class="z-80">
-                <!--价格-->fas
+                <!--价格-->
+                x1&#x3000;&#x3000;￥<span class="z-122">{{data.lessonprice}}</span>
             </section>
         </div>
-        <div class="z-76">
-            <section class="z-81">
-                <div class="z-82"><input type="radio" name="chooseall" > <label >全选</label></div>
-                <div class="z-83"><input type="radio" name="chooseall"> 全不选</div>
 
 
-            </section>
-            <section class="z-84"> 
-                共 &#x3000; ￥520
-            </section>
-            <section class="z-85">
-                <button class="z-87">立即支付</button>
-            </section>
-        </div>
+         {{/each}}{{/if}}
+
+
+
     </main>
-    <div class="z-40">
-        <!--demo上传图片-->
-        <section class="z-41">
-            <h3>支付环节</h3>
-            <hr>
-            <form action="" enctype="multipart/form-data" id="upphoto">
-                <label for="photos">请上传头像:</label><br>
-                <input type="file" name="photo" id="photos" accept=".jpg,jpeg,.png">
-                <button type="submit" class="z-43">上传</button>
-                <button type="button" class="z-42">取消</button>
-
-            </form>
+    <div class=" z-120">
+        <section class="z-81">
+            <!--<div class="z-82 checkbox-inline"><input type="radio" name="chooseall"> <label>全选</label></div>
+            <div class="z-83 checkbox-inline"><input type="radio" name="chooseall"> 全不选</div>-->
+            <div class="z-82">
+                <div class="z-124">
+                    <div class="z-126"></div>    
+                </div>全选
+            </div>
+            <div class="z-83">
+                <div class="z-125">
+                    <div class="z-127"></div>    
+                </div>全不选
+            </div>
+            
+        </section>
+        <section class="z-84">
+            共 &#x3000;￥<span class="z-121">0</span>
+        </section>
+        <section class="z-85">
+            <button class="z-87">立即支付</button>
         </section>
     </div>
+    <div class="z-40">
+        <!--demo上传图片-->
+        <marquee>您已进入支付界面，请注意周边环境并保存好自己的登录密码，千万别告诉别人哟~</marquee>
+        <section class="z-110 fa fa-remove animated ">
+        </section>
+        <section class="z-41 z-128">
+            <h3>支付环节</h3>
+            <hr>
+            <p class="z-129">您的钱包有:&#x3000;￥<span class="z-132"></span></p>
+            <p class="z-130">购买视频所需要花费:&#x3000;￥<span class="z-133"></span></p>
+            
+                <label for="passwordcheck">请输入登录密码以验证身份:</label>
+               <input type="password" class="form-control" id="passwordcheck" placeholder="请输入密码">
+            <p class="z-131">
+                <button type="button" class="btn btn-success z-134">验证并购买课程</button>
+            </p>
+        </section>
+        <section class="z-136">
+            <span class="fa fa-spinner fa-pulse"></span>
+        </section>
+    </div>
+     <div class="login-tishi">您有未填写的内容，请填写完后提交</div>
 </body>
 <script src="js/libs/jquery-3.1.1.min.js"></script>
 <script src="js/libs/jquery.cookie.js"></script>
+<script src="js/bootstrap.min.js"></script>
 <script src="js/libs/template.js"></script>
 <script src="js/shopcar.js"></script>
 

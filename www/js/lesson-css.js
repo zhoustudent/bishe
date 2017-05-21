@@ -70,6 +70,7 @@ $('.z-104').click(function () {
     var status = $(this).parent().siblings().eq(0).html()
     videoId = $(this).attr('data-id')
     console.log(status)
+    $('.z-115').html($(this).attr('data-price'))
     if (status == '免费') {
 
 

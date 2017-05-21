@@ -32,6 +32,11 @@ app.use(require('./router/shopcar'))
 app.use(require('./router/setting'))
 app.use(require('./router/mymoney'))
 app.use(require('./router/lesson-css'))
+app.use(require('./router/lesson-html'))
+app.use(require('./router/lesson-js'))
+app.use(require('./router/lesson-vue'))
+app.use(require('./router/mybuylesson'))
+app.use(require('./router/viewed'))
 
 app.listen(3000, function () {
     console.log('监听端口为3000')

@@ -84,7 +84,7 @@
                             </h4>
                             </div>
                             <div id="collapseThree" class="panel-collapse collapse">
-                                <div class="panel-body ads-buylist">
+                                <div class="panel-body ads-buylist ads-goulesson">
                                     购买课程列表
                                 </div>
                                 <div class="panel-body ads-allmoney">
@@ -111,7 +111,10 @@
 
                 </div>
                 <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12 ">
-                    <div class="ads-main">欢迎进入管理员中心</div>
+                    <div class="ads-main">
+                        <div>欢迎进入管理员中心</div>
+                        <div><img src="img/ads.gif" alt=""></div>
+                    </div>
                     <div class="ads-registLists">
 
                         <table class="table table-bordered">
@@ -127,6 +130,11 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                {{if datas[2].length == 0}}
+                                <tr>
+                                    <td colspan="6" style="text-align:center">暂无购买数据</td>
+                                </tr>
+                                {{else}}
                                 {{each datas[0] as data index}}
                                 <tr>
                                     <td>{{index + 1}}</td>
@@ -136,7 +144,7 @@
                                     <td>{{data.email}}</td>
                                     <td>{{data.createTime}}</td>
                                 </tr>
-                                {{/each}}
+                                {{/each}} {{/if}}
                             </tbody>
                         </table>
 
@@ -174,12 +182,12 @@
                                 <div class="form-group">
                                     <label for="lessonurl" class="col-sm-2 control-label">课程链接</label>
                                     <div class="col-sm-6">
-                                        <input type="text" class="form-control" id="lessonurl" placeholder="请输入课程链接" required name="lessonurl">
+                                        <input type="text" class="form-control" id="lessonurl" placeholder="请输入课程链接,目前仅支持.mp4,.webm,.ogg格式" required name="lessonurl">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <div class="col-sm-6 col-sm-offset-2">
-                                        如：C:\Users\Zhou student\Desktop\nodefirst\www\js\video\cloud.mp4 <br>或者：http://player.yinyuetai.com/video/player/109022/v_0.swf
+                                        如：video\cloud.mp4 <br>或者：http://player.yinyuetai.com/video/player/109022/v_0.swf
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -214,7 +222,7 @@
                                 <div class="form-group">
                                     <label for="lessonprice" class="col-sm-2 control-label">价格(元)</label>
                                     <div class="col-sm-6">
-                                        <input type="number" class="form-control" id="lessonprice" value="0"  required name="lessonprice">
+                                        <input type="number" class="form-control" id="lessonprice" value="0" required name="lessonprice">
                                     </div>
                                 </div>
                                 <div class="form-group addsub">
@@ -257,6 +265,11 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                {{if datas[2].length == 0}}
+                                <tr>
+                                    <td colspan="11" style="text-align:center">暂无购买数据</td>
+                                </tr>
+                                {{else}}
                                 {{each datas[1] as data index}}
                                 <tr>
                                     <td>{{index + 1}}</td>
@@ -270,34 +283,39 @@
                                     <td>{{data.lessongrade}}</td>
                                     <td>{{data.lessondeviation}}</td>
                                     <td>
-                                        <button type="button" class="btn btn-danger lessondel">删除</button>
+                                        <button type="button" class="btn btn-danger lessondel">下架</button>
                                     </td>
                                 </tr>
-                                {{/each}}
+                                {{/each}} {{/if}}
                             </tbody>
                         </table>
 
                     </div>
                     <div class="ads-userzhanghus">
-                         <table class="table table-bordered">
+                        <table class="table table-bordered">
                             <caption>共有{{length[2]}}门课程</caption>
                             <thead>
                                 <tr>
                                     <th>序号</th>
                                     <th>用户名</th>
                                     <th>用户账户金额</th>
-                                    
+
                                 </tr>
                             </thead>
                             <tbody>
+                                {{if datas[2].length == 0}}
+                                <tr>
+                                    <td colspan="3" style="text-align:center">暂无购买数据</td>
+                                </tr>
+                                {{else}}
                                 {{each datas[2] as data index}}
                                 <tr>
                                     <td>{{index + 1}}</td>
                                     <td>{{data.username}}</td>
                                     <td>{{data.usermoney}}</td>
-                                    
+
                                 </tr>
-                                {{/each}}
+                                {{/each}} {{/if}}
                             </tbody>
                         </table>
                     </div>
@@ -315,7 +333,7 @@
                                     <th>用户名称</th>
                                     <th>用户金库</th>
                                     <th>操作</th>
-                                    
+
                                 </tr>
                             </thead>
                             <tbody>
@@ -324,11 +342,67 @@
                                     <td>{{index + 1}}</td>
                                     <td>{{data.id}}</td>
                                     <td>{{data.username}}</td>
-                                    <td><input type="number" class="form-control" id="addprice" name="addprice" placeholder="请输入给用户充值的金额(整数金额)" required></td>
+                                    <td><input type="number" class="form-control" id="addprice" name="addprice" placeholder="请输入给用户充值的金额(整数金额)"
+                                            required></td>
                                     <td><button type="button" class="btn btn-info addsubmon">提交</button></td>
-                                    
+
                                 </tr>
                                 {{/each}}
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="ads-goulessons">
+                        <h2>网站购买及放入购物车记录表</h2>
+                        <h3>已购买数据</h3>
+                        <table class="table table-bordered">
+                            <caption>目前整个网站购买条数为{{length[3]}}</caption>
+                            <thead>
+                                <tr>
+                                    <th>序号</th>
+                                    <th>购买人</th>
+                                    <th>购买课程</th>
+                                    <th>购买时间</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {{if datas[3].length == 0}}
+                                <tr>
+                                    <td colspan="4" style="text-align:center">暂无购买数据</td>
+                                </tr>
+                                {{else}} {{each datas[3] as data index}}
+                                <tr>
+                                    <td>{{index + 1}}</td>
+                                    <td>{{data.username}}</td>
+                                    <td>{{data.lessonname}}</td>
+                                    <td>{{data.createTime}}</td>
+                                </tr>
+                                {{/each}} {{/if}}
+                            </tbody>
+                        </table>
+                        <h3>已放入购物车数据</h3>
+                        <table class="table table-bordered">
+                            <caption>目前整个网站已放入购物车为{{length[4]}}条</caption>
+                            <thead>
+                                <tr>
+                                    <th>序号</th>
+                                    <th>购买人</th>
+                                    <th>意购买课程</th>
+                                    <th>放入购物车时间</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {{if datas[4].length == 0}}
+                                <tr>
+                                    <td colspan="4" style="text-align:center">暂无购买数据</td>
+                                </tr>
+                                {{else}} {{each datas[4] as data index}}
+                                <tr>
+                                    <td>{{index + 1}}</td>
+                                    <td>{{data.username}}</td>
+                                    <td>{{data.lessonname}}</td>
+                                    <td>{{data.createTime}}</td>
+                                </tr>
+                                {{/each}} {{/if}}
                             </tbody>
                         </table>
                     </div>

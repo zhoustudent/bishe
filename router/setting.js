@@ -4,6 +4,8 @@ var router = express.Router()
 var user = require('../mongo/mongo')
 var addlesson = require('../mongo/addlesson')
 var usermoney = require('../mongo/usermoney')
+var addshopcar = require('../mongo/addshopcar')
+var mybuylesson = require('../mongo/mybuylesson')
 router.get('/setting.html', function (req, res) {
 
     user.find(function (err, data) {
@@ -26,11 +28,32 @@ router.get('/setting.html', function (req, res) {
                             var length3 = data3.length
                             lengthAll.push(length3)
                             dataAll.push(data3)
-                            res.render('setting', {
-                                title: '管理员中心',
-                                datas: dataAll,
-                                length: lengthAll
+
+                            addshopcar.find({ status: '1' }).exec(function (err, data3) {
+                                if (!err) {
+                                    var length3 = data3.length
+                                    lengthAll.push(length3)
+                                    dataAll.push(data3)
+                                    addshopcar.find({ status: '0' }).exec(function (err, data4) {
+                                        if (!err) {
+                                            var length4 = data3.length
+                                            lengthAll.push(length4)
+                                            dataAll.push(data4)
+                                            res.render('setting', {
+                                                title: '管理员中心',
+                                                datas: dataAll,
+                                                length: lengthAll
+                                            })
+                                        }
+                                    })
+
+
+
+                                }
                             })
+
+
+
                         }
                     })
 
@@ -111,9 +134,25 @@ router.post('/addnewlesson/first', function (req, res) {
 
 router.get('/lessondel/:lessonId', function (req, res) {
     var username = req.params.lessonId
-    addlesson.findByIdAndRemove(username, function (err) {
-        //console.log('删除成功')
-        res.json({ code: 'success', msg: '删除成功' })
+    console.log(username)
+    addlesson.findById(username).exec(function (err, data) {
+        if (!err) {
+            console.log(data.lessonname)
+            addshopcar.remove({ lessonname: data.lessonname }).exec(function (err) {
+                if (!err) {
+                    console.log('购物车删除成功')
+                    mybuylesson.remove({ lessonname: data.lessonname }).exec(function (err) {
+                        if (!err) {
+                            console.log('我的视频删除成功')
+                            addlesson.findByIdAndRemove(username, function (err) {
+                                console.log('总表删除成功')
+                                res.json({ code: 'success', msg: '删除成功' })
+                            })
+                        }
+                    })
+                }
+            })
+        }
     })
 })
 router.get('/adsallmoney/chaxun', function (req, res) {

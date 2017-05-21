@@ -565,6 +565,7 @@ body{
     height: 100px;
     padding-top: 10px;
     /*background: red;*/
+    font-size: 20px;
 }
 .z-54{
     text-align: center;
@@ -596,8 +597,10 @@ body{
 .z-75{
     width: 100%;
     padding: 20px;
+    height: 450px;
+    overflow: auto;
 }
-.z-76{
+.z-76,.z-120{
     
     background-color: #fff;
     padding: 20px;
@@ -607,12 +610,26 @@ body{
     margin-bottom: 20px;
     box-shadow: 0 0 10px 5px #999 inset;
 }
-.z-76>section{
+.z-76>section,.z-120>section{
     float: left;
 }
 .z-86{
     width: 20px;
-    height: 20px;   
+    height: 20px; 
+    margin: auto; 
+    border-radius: 50%;
+    border: 1px solid #444;
+    padding: 2px; 
+    background: #fff;
+}
+.actives{
+    background: #ff6709;
+}
+.z-123{
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin: 1px auto;
 }
 .z-77{
     width: 5%;
@@ -624,15 +641,28 @@ body{
     width: 20%;
     padding: 10px;
     border-left: 1px dotted #444;
+    
+}
+.z-78 img{
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
 }
 .z-79{
     width: 60%;
+    text-align: center;
+    padding-top: 5%;
 }
 .z-80{
     width: 10%;
     float: right;
     text-align: right;
     margin-right: 5%;
+    padding-top: 5%;
+    color: #ff6709;
+}
+.z-80 span{
+    font-size: 20px;
 }
 .z-81{
     width: 20%;
@@ -684,7 +714,7 @@ body{
 .ads-main{
     font-size: 40px;
     text-align: center;
-    line-height: 300px;
+    /*line-height: 300px;*/
 }
 .ads-registLists{
     display: none;
@@ -923,4 +953,82 @@ body{
 }
 .z-117{
     margin-top: 80px;
+}
+.z-120{
+    position: fixed;
+    bottom: 20px;
+    left: 5%;
+    margin: 0 auto;
+    width: 90%;
+}
+.z-82,.z-83,.z-124,.z-125{
+    display: inline-block;
+    font-size: 20px;
+    
+}
+.z-82,.z-83{
+    margin-right: 20px;
+    padding-top: 10px;
+}
+.z-124,.z-125{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid #444;
+    padding: 2px;
+}
+.z-126,.z-127{
+    width: 12px;
+    height: 12px;
+    margin: 1px auto;
+    border-radius: 50%;
+    background-color: #fff;
+}
+.chooseactive{
+    background-color: #ff6709;
+}
+.z-121{
+    font-size: 24px;
+}
+.z-128,.z-136{
+    width: 500px;
+    color: #ff6709;
+}
+.z-128 hr{
+    border-top: 1px solid #000;
+    
+}
+.z-128 p{
+    margin: 10px auto;
+}
+.z-131{
+    text-align: center;
+}
+marquee{
+    color: #fff;
+}
+.z-136{
+    background-color: #fff;
+    margin: auto;
+    height: 280px;
+    margin-top: 10%;
+     padding: 20px;
+    border-radius: 10px;
+    display: block;
+    font-size: 100px;
+    padding-top: 50px;
+    text-align: center;
+    display: none;
+}
+.z-140{
+    color: #ff6709;
+}
+.z-140 th{
+    color: #fff;
+}
+.z-140 caption{
+    color: #000;
+}
+.ads-goulessons{
+    display: none;
 }

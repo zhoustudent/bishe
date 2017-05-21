@@ -44,5 +44,5 @@ $('.z-91').click(function(){
     window.location.href = "lesson-js.html"
 })
 $('.z-92').click(function(){
-    window.location.href = "lesson-css.html"
+    window.location.href = "lesson-vue.html"
 })

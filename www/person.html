@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="author" content="小周同学">
     <title>个人中心</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
@@ -40,8 +41,8 @@
         <div class="z-38 animated ">个人<br>信息</div>
 
 
-        <div class="z-34 animated rollIn"><a href="#">我的课程</a></div>
-        <div class="z-31 animated rollIn"><a href="#">我购买的视频</a></div>
+        <div class="z-34 animated rollIn"><a href="viewed.html">观看记录</a></div>
+        <div class="z-31 animated rollIn"><a href="mybuylesson.html">我购买的视频</a></div>
         <div class="z-32 animated rollIn"><a href="mymoney.html">我的钱包</a></div>
         <div class="z-33 animated rollIn"><a href="shopcar.html">我的<br>购物车</a></div>
     </main>
@@ -106,9 +107,9 @@
 
             <form action="" enctype="multipart/form-data" id="uppassword">
                 <div class="z-62">
-                    <label for="oldpassword">当前用户名：</label>
+                    <label for="oldpassword">当前密码：</label>
                     <input type="password" name="oldpassword" id="oldpassword" required><br>
-                    <label for="newpassword">新用户名：</label>
+                    <label for="newpassword">设置新密码：</label>
                     <input type="password" name="newpassword" id="newpassword" required>
                 </div>
                 <button type="submit" class="z-63">提交</button>
@@ -119,11 +120,18 @@
 
         </section>
     </div>
-
+         
+    
+    
+    
+    
+    
+    
     <div class="login-tishi">您有未填写的内容，请填写完后提交</div>
 </body>
 
 <script src="js/libs/jquery-3.1.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
 <script src="js/libs/jquery.cookie.js"></script>
 <script src="js/person.js"></script>
 
